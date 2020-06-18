@@ -1,48 +1,42 @@
-KEIL SOFTWARE! IDE
+# 8051 Microcontroller programming in C
 
-keil.com - 8051 Development Tools
+## Softwares Used
 
-includehelp.com/embedded-system/8051-microcontroller-programming-using-keil-uvision-ide.aspx
+### 1. Keil IDE by ARM
 
-Product Downloads - C51
-keil.com/demo/eval/c51.htm
+### 2. Proteus Simulator 
 
-AT89C51 or 8051
------------------
+## Procedure: Basic Integration between Keil and Proteus
 
-Proteus Simulator!
+### Keil IDE
 
-includehelp.com/embedded-system/8051-microcontroller-programming-using-keil-uvision-ide.aspx
+* Introduction [link](includehelp.com/embedded-system/8051-microcontroller-programming-using-keil-uvision-ide.aspx)
 
-Proteus 7.8 download!! STUDENT VERSION
-8051projects.net/t57699/electronics/proteus-78-sp2-long-live-download-links.htm
+* Download [link](keil.com/demo/eval/c51.htm)
 
-------------------------------------------------------
+* Device: AT89C51 or 8051
 
-1. LED Blink
+#### LED Blinking Program
 
----------------------------------------------------
-
-1. LED Blink!
-
+```c
 #include<reg51.h>
-sbit <<variable1>>= P1^0; //SFR (Special function register bit) // Pin 0 of Port 1
-
-void <init function>(void); // P1 as output port
+sbit LED= P1^0; //SFR (Special function register bit) // Pin 0 of Port 1
+void init(void); // P1 as output port
+void delay(int a);
 
 int main(void)
 {
-<init function>();
+init();
 while(1)
 {
-<variable1>=0;
+LED=0;
 delay(30000);
-<variable1>=1;
+LED=1;
 delay(30000);
 }
 }
 
-void <<init function>>(void)
+void init(void)
 {
 P1 = 0x00; // P1= 0000 0000 // Port 1 as output -- 0 implies output pins 1 implies input pins!
 }
@@ -52,76 +46,24 @@ void delay(int a)
 int i;
 for(i=0;i<a;i++); // 1375 == 1 ms
 }
+```
 
---------------------------------------
+### Proteus Simulator
 
-How to simulate the circuit!!!
+* Introduction [link](instructables.com/id/Interfacing-8051-Microcntroller-With-162-Lcd-in-Pr)
 
-Open Proteus!!
-P - Pick from Libraries!
-Pick device!!
+* Download [link](8051projects.net/t57699/electronics/proteus-78-sp2-long-live-download-links.htm)
 
-Keyword - 
+#### How to simulate the circuit
 
-1 at89c51
+* Open Proteus
 
-2 animated led - keep near p1.0
+* P - Pick device - AT89C51
+
+* P - Pick device - Animated LED
+
+* Double click 8051 board and add hex file from Keil.
 
 * Draw wire between 1 and 2 positive with pin and negative with ground!
 Right click - place - terminal - ground!
 
-PROGRAM FILES - hex file!! - Play!!
-
-LINK!! instructables.coms
-
-instructables.com/id/Interfacing-8051-Microcntroller-With-162-Lcd-in-Pr
-
-----------------------------------------------
-
-Program 2
-
-#include<reg51.h>
-sbit <<variable1>>= P1^0; //SFR (Special function register bit) // Pin 0 of Port 1
-
-void <init function>(void); // P1 as output port
-
-int main(void)
-{
-<init function>();
-while(1)
-{
-<variable1>=0;
-delay(30000);
-<variable1>=1;
-delay(30000);
-//////////////////////////////////
-LED = 0x0f;
-delay()
-LED= 0xf0;
-
-//odd even
-//shift
-////Left shift
-led = 0x01;
-delay();
-for(i=0;i<=7;i++)
-{
-Led=led<<1;
-delay();
-}
-//rotate
-// rotate left (led<<1 | 0x01);
-/////////////////////////////////
-}
-}
-
-void <<init function>>(void)
-{
-P1 = 0x00; // P1= 0000 0000 // Port 1 as output -- 0 implies output pins 1 implies input pins!
-}
-
-void delay(int a)
-{
-int i;
-for(i=0;i<a;i++); // 1375 == 1 ms
-}
