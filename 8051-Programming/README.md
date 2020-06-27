@@ -50,9 +50,9 @@ for(i=0;i<a;i++); // 1375 == 1 ms
 
 ### Proteus Simulator
 
-* Introduction [link](instructables.com/id/Interfacing-8051-Microcntroller-With-162-Lcd-in-Pr)
+* Introduction [link](https://instructables.com/id/Interfacing-8051-Microcntroller-With-162-Lcd-in-Pr)
 
-* Download [link](8051projects.net/t57699/electronics/proteus-78-sp2-long-live-download-links.htm)
+* Download [link](https://8051projects.net/t57699/electronics/proteus-78-sp2-long-live-download-links.htm)
 
 #### How to simulate the circuit
 
