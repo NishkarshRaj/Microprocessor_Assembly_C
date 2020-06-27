@@ -1,7 +1,9 @@
 # 8085 MPU and 8051 MCU
 
 ## Programming languages
+
 1. Assembly (Middle level)
+
 2. C programming (High level)
 
 ## 8051 Programming Contents
@@ -22,6 +24,6 @@
 
 8. DAC Code
 
-## How to contributions
+## How to contribute
 
 All types of contributions are welcomed. Please follow the following [guidelines](CONTRIBUTING.md).
